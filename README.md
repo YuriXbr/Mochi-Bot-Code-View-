@@ -7,11 +7,10 @@ Token, BotID, Bot version, Packages Versions
 
 ## NÃO É PERMITIDO A CÓPIA OU INSTANCEAMENTO DESTE CÓDIGO
 
-==================================================================================================================================
+==========================================================================================
 
 # MochiBotOpenCodeView English Desc
 
-# MochiBotOpenCodeView
 Mochi-bot is a discord bot,
 here you can see the code and suggest implementations,
 
