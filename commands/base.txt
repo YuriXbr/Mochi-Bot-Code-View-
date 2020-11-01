@@ -1,0 +1,11 @@
+module.exports = {
+    name: 'setstat',
+    description: 'Muda o status do bot',
+    async execute(message, args) {
+        const Discord = require("discord.js"); // carrega a API do discord
+        const client = new Discord.Client(); // carrega a API do client do discord
+        const { MessageEmbed } = require('discord.js');
+
+
+        }
+    }
