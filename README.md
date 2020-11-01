@@ -7,7 +7,7 @@ Token, BotID, Bot version, Packages Versions
 
 ## NÃO É PERMITIDO A CÓPIA OU INSTANCEAMENTO DESTE CÓDIGO
 
-==========================================================================================
+==========================================================================
 
 # MochiBotOpenCodeView English Desc
 
