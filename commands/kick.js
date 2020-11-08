@@ -1,22 +1,38 @@
-module.exports = {
-    name: 'setstat',
-    description: 'Muda o status do bot',
-    async execute(message, args) {
-        const Discord = require("discord.js"); // carrega a API do discord
-        const client = new Discord.Client(); // carrega a API do client do discord
-        const { MessageEmbed } = require('discord.js');
+const Discord = require('discord.js');
 
-        message.delete().catch();
-        var member = message.mentions.members.first();
-        if (member.kickable) {
-        member.kick().then((member) => {
-            message.channel.send(":wave: " + member.displayName + " Escreveu não leu o pau comeu");
-            client.channels.get(config.logchannelid).send(`${message.author} baniu ${member}`);
-        }).catch(() => {
-            message.reply("Permissão negada");
-        });
-        } else {
-        message.reply("Não kickavel");
-        }
-        }
+module.exports = {
+    name: 'kick',
+    description: 'kicka um usuario',
+    async execute(message, args) {
+        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('Voce nao pode fazer isso')
+        if(!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('Eu não tenho permissao')
+
+        const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+
+        if(!args[0]) return message.channel.send('Especifique um usuario');
+
+        if(!member) return message.channel.send('Nao consigo achar um usuario com este nome');
+        if(!member.kickable) return message.channel.send('A permissão deste usuario é maior que a minha');
+
+        if(member.id === message.author.id) return message.channel.send('Bruh, Voce não pode kickar voce mesmo');
+
+        let reason = args.slice(1).join(" ");
+
+        if(!reason) reason = 'Nao especificado';
+
+        member.kick(`👮‍♂️ Staff: ${message.author.tag}   |   💀 motivo: ${reason}`)
+        .catch(err => {
+            if(err) return message.channel.send('Alguma coisa deu errado')
+        })
+
+        const kickembed = new Discord.MessageEmbed()
+        .setTitle('Kick')
+        .setThumbnail(member.user.displayAvatarURL())
+        .addField('Usuario:', member)
+        .addField('Staff:', message.author)
+        .addField('Motivo:', reason)
+        .setTimestamp()
+
+        message.channel.send(kickembed);        
     }
+}
