@@ -1,4 +1,4 @@
-# MochiBotOpenCodeView
+# ATENÇÃO
 Mochi-bot é um bot do discord,
 aqui você poderá ver o código e sugerir implementações, 
 
@@ -9,8 +9,7 @@ Token, BotID, Bot version, Packages Versions
 
 ==========================================================================
 
-# MochiBotOpenCodeView English Desc
-
+# WARNING
 Mochi-bot is a discord bot,
 here you can see the code and suggest implementations,
 
