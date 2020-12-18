@@ -27,10 +27,7 @@ module.exports = {
 
         const kickembed = new Discord.MessageEmbed()
         .setTitle('Kick')
-        .setThumbnail(member.user.displayAvatarURL())
-        .addField('Usuario:', member)
-        .addField('Staff:', message.author)
-        .addField('Motivo:', reason)
+        .color()
         .setTimestamp()
 
         message.channel.send(kickembed);        

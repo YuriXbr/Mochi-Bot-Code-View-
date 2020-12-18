@@ -52,11 +52,23 @@ module.exports = {
         .setFooter('`Data`', "02/11")
         .setTimestamp()
 
+        const doistwo = new Discord.MessageEmbed()
+        .setTitle('2.2 - Pequena atualização')
+        .addField('`Adicionado`', 'Comando kiss')
+        .addField('`Adicionado`', 'Comando FBI')
+        .addField('`Adicionado`', 'Comando chorar')
+        .addField('`Adicionado`', 'Comando dedada')
+        .addField('`Adicionado`', 'Comando eval')
+        .addField('`NOVO:`', 'Os comandos de interação agora são reconhecidos de varias formas (cry, chorar, chorando etc)')
+        .setFooter('`Data`', "05/12")
+        .setTimestamp()
+
 
         const pages = [
                 doisdotzero,
                 doisdotcinco,
-                doisone
+                doisone,
+                doistwo
         ]
 
         const emojiList = ["⏪", "⏩"];
